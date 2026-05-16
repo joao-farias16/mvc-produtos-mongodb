@@ -2,8 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const controller =
-require('../controllers/produtoController');
+const controller = require('../controllers/produtoController');
 
 router.get('/', controller.home);
 router.get('/sobre', controller.sobre);
