@@ -6,31 +6,39 @@ Aplicação web desenvolvida utilizando Node.js, Express, EJS e MongoDB seguindo
 
 O sistema permite:
 
-- Página Home
-- Página Sobre
-- Página Contato
-- Cadastro de produtos
-- Listagem de produtos
-- Edição de produtos
-- Exclusão de produtos
-- Armazenamento persistente utilizando MongoDB Atlas
-- Interface moderna e responsiva
+* Página Home
+* Página Sobre
+* Página Contato
+* Autenticação de usuários
+* Controle de sessão
+* Proteção de rotas
+* Cadastro de produtos
+* Listagem de produtos
+* Edição de produtos
+* Exclusão de produtos
+* Armazenamento persistente utilizando MongoDB Atlas
+* Documentação interativa utilizando Swagger/OpenAPI
+* Interface moderna e responsiva
 
 ---
 
-## Tecnologias utilizadas
+## Tecnologias Utilizadas
 
-- Node.js
-- Express
-- MongoDB Atlas
-- Mongoose
-- EJS
-- CSS
-- Dotenv
+* Node.js
+* Express
+* MongoDB Atlas
+* Mongoose
+* EJS
+* CSS
+* Dotenv
+* Express Session
+* Cookie Parser
+* Swagger UI Express
+* Swagger JSDoc
 
 ---
 
-## Estrutura do projeto
+## Estrutura do Projeto
 
 ```plaintext
 src/
@@ -39,18 +47,27 @@ src/
 │   └── db.js
 │
 ├── controllers/
-│   └── produtoController.js
+│   ├── produtoController.js
+│   └── authController.js
+│
+├── middlawares/
+│   └── auth.js
 │
 ├── models/
 │   └── Produto.js
 │
 ├── routes/
-│   └── produtoRoutes.js
+│   ├── produtoRoutes.js
+│   └── authRoutes.js
+│
+├── swagger/
+│   └── swagger.js
 │
 ├── views/
 │   ├── home.ejs
 │   ├── sobre.ejs
 │   ├── contato.ejs
+│   ├── login.ejs
 │   ├── produtos.ejs
 │   │
 │   └── partials/
@@ -61,7 +78,7 @@ src/
 │   └── css/
 │       └── style.css
 │
-└── server.js
+└── app.js
 ```
 
 ---
@@ -76,7 +93,7 @@ npm install
 
 ---
 
-## Configuração do ambiente
+## Configuração do Ambiente
 
 Este projeto utiliza variáveis de ambiente.
 
@@ -93,6 +110,7 @@ Utilize o arquivo `.env.example` como modelo:
 ```env
 PORT=3000
 MONGO_URI=SUA_STRING_MONGODB_AQUI
+SESSION_SECRET=sua_chave_secreta
 ```
 
 Substitua:
@@ -108,11 +126,12 @@ Exemplo:
 ```env
 PORT=3000
 MONGO_URI=mongodb+srv://usuario:senha@cluster.mongodb.net/produtosMVC?retryWrites=true&w=majority&appName=Cluster0
+SESSION_SECRET=minha_chave_secreta
 ```
 
 ---
 
-## Executando o projeto
+## Executando o Projeto
 
 Rodar:
 
@@ -120,11 +139,25 @@ Rodar:
 npm run dev
 ```
 
+ou
+
+```bash
+node src/app.js
+```
+
 Servidor:
 
 ```plaintext
 http://localhost:3000
 ```
+
+---
+
+## Autenticação
+
+O sistema possui autenticação de usuários baseada em sessões utilizando Express Session.
+
+As rotas protegidas exigem autenticação prévia para acesso, garantindo maior controle sobre a navegação da aplicação.
 
 ---
 
@@ -146,6 +179,19 @@ GET /sobre
 
 ```plaintext
 GET /contato
+```
+
+### Login
+
+```plaintext
+GET /login
+POST /login
+```
+
+### Logout
+
+```plaintext
+GET /logout
 ```
 
 ### Produtos
@@ -177,14 +223,36 @@ GET /produtos/excluir/:id
 
 ---
 
+## Documentação Swagger
+
+A documentação interativa da aplicação está disponível em:
+
+```plaintext
+http://localhost:3000/api-docs
+```
+
+Através dela é possível:
+
+* Visualizar todos os endpoints disponíveis
+* Consultar parâmetros de requisição
+* Ver exemplos de entrada e saída
+* Testar rotas diretamente pelo navegador utilizando o recurso **Try it out**
+* Facilitar a integração com aplicações Front-end e Mobile
+
+---
+
 ## Funcionalidades
 
-- Persistência utilizando MongoDB
-- CRUD completo
-- Organização MVC
-- Componentes reutilizáveis
-- Interface moderna
-- Responsividade
+* Autenticação de usuários
+* Controle de sessão
+* Proteção de rotas
+* Persistência utilizando MongoDB Atlas
+* CRUD completo de produtos
+* Organização em padrão MVC
+* Componentes reutilizáveis com EJS
+* Documentação OpenAPI com Swagger
+* Interface moderna
+* Responsividade
 
 ---
 
@@ -192,10 +260,16 @@ GET /produtos/excluir/:id
 
 Projeto desenvolvido para fins acadêmicos com foco na prática de:
 
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- MVC
-- CRUD
-- Organização de projetos
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+* MVC
+* CRUD
+* Sessões
+* Swagger/OpenAPI
+* Documentação de APIs
+* Organização de projetos
+
+```
+```
