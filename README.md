@@ -29,7 +29,7 @@ Tela principal do sistema responsável pelo cadastro, listagem, edição e exclu
 
 ### Documentação Swagger
 
-![Documentação Swagger](.src//public/img/swagger.png)
+![Documentação Swagger](.src/public/img/swagger.png)
 
 Interface interativa gerada pelo Swagger/OpenAPI para visualização e teste dos endpoints disponíveis na aplicação.
 
