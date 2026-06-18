@@ -1,24 +1,37 @@
 # Sistema MVC de Produtos com MongoDB
 
-## Descrição
+![Node.js](https://img.shields.io/badge/Node.js-22.x-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen)
 
-Aplicação web desenvolvida utilizando Node.js, Express, EJS e MongoDB seguindo o padrão MVC (Model-View-Controller).
+Aplicação web desenvolvida utilizando Node.js, Express, EJS e MongoDB Atlas seguindo o padrão MVC (Model-View-Controller).
 
-O sistema permite:
+O sistema possui autenticação de usuários, controle de sessão, proteção de rotas e um CRUD completo de produtos, utilizando persistência de dados no MongoDB Atlas e documentação interativa com Swagger/OpenAPI.
 
-* Página Home
-* Página Sobre
-* Página Contato
-* Autenticação de usuários
-* Controle de sessão
-* Proteção de rotas
-* Cadastro de produtos
-* Listagem de produtos
-* Edição de produtos
-* Exclusão de produtos
-* Armazenamento persistente utilizando MongoDB Atlas
-* Documentação interativa utilizando Swagger/OpenAPI
-* Interface moderna e responsiva
+---
+
+## Demonstração
+
+### Tela de Login
+
+![Tela de Login](./public/img/login.png)
+
+A página de login permite que usuários autenticados acessem as funcionalidades protegidas do sistema através do controle de sessões.
+
+---
+
+### Gerenciamento de Produtos
+
+![Gerenciamento de Produtos](./public/img/produtos.png)
+
+Tela principal do sistema responsável pelo cadastro, listagem, edição e exclusão de produtos armazenados no MongoDB Atlas.
+
+---
+
+### Documentação Swagger
+
+![Documentação Swagger](./public/img/swagger.png)
+
+Interface interativa gerada pelo Swagger/OpenAPI para visualização e teste dos endpoints disponíveis na aplicação.
 
 ---
 
@@ -83,9 +96,39 @@ src/
 
 ---
 
+## Funcionalidades
+
+* Página Home
+* Página Sobre
+* Página Contato
+* Autenticação de usuários
+* Controle de sessão
+* Proteção de rotas
+* Cadastro de produtos
+* Listagem de produtos
+* Edição de produtos
+* Exclusão de produtos
+* Armazenamento persistente utilizando MongoDB Atlas
+* Documentação interativa utilizando Swagger/OpenAPI
+* Interface responsiva
+
+---
+
 ## Instalação
 
-Clone o repositório e instale as dependências:
+Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+Acesse a pasta do projeto:
+
+```bash
+cd seu-repositorio
+```
+
+Instale as dependências:
 
 ```bash
 npm install
@@ -97,15 +140,7 @@ npm install
 
 Este projeto utiliza variáveis de ambiente.
 
-O arquivo `.env` não é enviado para o GitHub por conter informações privadas.
-
-Crie um arquivo:
-
-```plaintext
-.env
-```
-
-Utilize o arquivo `.env.example` como modelo:
+Crie um arquivo `.env` na raiz do projeto utilizando o modelo abaixo:
 
 ```env
 PORT=3000
@@ -113,27 +148,13 @@ MONGO_URI=SUA_STRING_MONGODB_AQUI
 SESSION_SECRET=sua_chave_secreta
 ```
 
-Substitua:
-
-```plaintext
-SUA_STRING_MONGODB_AQUI
-```
-
-pela string do seu MongoDB Atlas.
-
-Exemplo:
-
-```env
-PORT=3000
-MONGO_URI=mongodb+srv://usuario:senha@cluster.mongodb.net/produtosMVC?retryWrites=true&w=majority&appName=Cluster0
-SESSION_SECRET=minha_chave_secreta
-```
+Substitua `SUA_STRING_MONGODB_AQUI` pela sua string de conexão do MongoDB Atlas.
 
 ---
 
 ## Executando o Projeto
 
-Rodar:
+Rodar em modo de desenvolvimento:
 
 ```bash
 npm run dev
@@ -155,9 +176,9 @@ http://localhost:3000
 
 ## Autenticação
 
-O sistema possui autenticação de usuários baseada em sessões utilizando Express Session.
+O sistema utiliza autenticação baseada em sessões através do Express Session.
 
-As rotas protegidas exigem autenticação prévia para acesso, garantindo maior controle sobre a navegação da aplicação.
+As rotas protegidas exigem autenticação prévia para acesso, garantindo maior segurança e controle sobre a navegação da aplicação.
 
 ---
 
@@ -225,7 +246,7 @@ GET /produtos/excluir/:id
 
 ## Documentação Swagger
 
-A documentação interativa da aplicação está disponível em:
+A documentação interativa está disponível em:
 
 ```plaintext
 http://localhost:3000/api-docs
@@ -233,43 +254,33 @@ http://localhost:3000/api-docs
 
 Através dela é possível:
 
-* Visualizar todos os endpoints disponíveis
+* Visualizar os endpoints disponíveis
 * Consultar parâmetros de requisição
 * Ver exemplos de entrada e saída
-* Testar rotas diretamente pelo navegador utilizando o recurso **Try it out**
+* Testar rotas diretamente pelo navegador
 * Facilitar a integração com aplicações Front-end e Mobile
 
 ---
 
-## Funcionalidades
-
-* Autenticação de usuários
-* Controle de sessão
-* Proteção de rotas
-* Persistência utilizando MongoDB Atlas
-* CRUD completo de produtos
-* Organização em padrão MVC
-* Componentes reutilizáveis com EJS
-* Documentação OpenAPI com Swagger
-* Interface moderna
-* Responsividade
-
----
-
-## Observações
+## Objetivo do Projeto
 
 Projeto desenvolvido para fins acadêmicos com foco na prática de:
 
 * Node.js
 * Express
-* MongoDB
+* MongoDB Atlas
 * Mongoose
-* MVC
+* Arquitetura MVC
 * CRUD
 * Sessões
 * Swagger/OpenAPI
 * Documentação de APIs
 * Organização de projetos
 
-```
-```
+---
+
+## Autor
+
+João Farias
+
+Curso Técnico em Informática – CIMOL

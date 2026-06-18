@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+/**
+ * @class Produto
+ * @classdesc Modelo responsável pelo armazenamento e gerenciamento dos produtos no banco de dados MongoDB.
+ */
+
 const ProdutoSchema = new mongoose.Schema({
     nome: {
         type: String,
