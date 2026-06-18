@@ -13,7 +13,7 @@ O sistema possui autenticação de usuários, controle de sessão, proteção de
 
 ### Tela de Login
 
-![Tela de Login](./public/img/login.png)
+![Tela de Login](./src/public/img/login.png)
 
 A página de login permite que usuários autenticados acessem as funcionalidades protegidas do sistema através do controle de sessões.
 
@@ -21,7 +21,7 @@ A página de login permite que usuários autenticados acessem as funcionalidades
 
 ### Gerenciamento de Produtos
 
-![Gerenciamento de Produtos](./public/img/produtos.png)
+![Gerenciamento de Produtos](./src/public/img/produtos.png)
 
 Tela principal do sistema responsável pelo cadastro, listagem, edição e exclusão de produtos armazenados no MongoDB Atlas.
 
@@ -29,7 +29,7 @@ Tela principal do sistema responsável pelo cadastro, listagem, edição e exclu
 
 ### Documentação Swagger
 
-![Documentação Swagger](./public/img/swagger.png)
+![Documentação Swagger](.src//public/img/swagger.png)
 
 Interface interativa gerada pelo Swagger/OpenAPI para visualização e teste dos endpoints disponíveis na aplicação.
 
